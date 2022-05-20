@@ -1,0 +1,4 @@
+<app-preloader></app-preloader>
+<app-navbar-four *ngIf="!(location == '/error' || location == '/coming-soon')"></app-navbar-four>
+<router-outlet></router-outlet>
+<app-footer *ngIf="!(location == '/error' || location == '/coming-soon')"></app-footer>
