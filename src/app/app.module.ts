@@ -34,6 +34,8 @@ import { BlogDetailsComponent } from './components/pages/blog-details/blog-detai
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './components/interceptors/auth-interceptor';
+import { QuoterComponent } from './components/pages/quoter/quoter.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -66,12 +68,15 @@ import { AuthInterceptor } from './components/interceptors/auth-interceptor';
     CheckoutComponent,
     BlogComponent,
     BlogDetailsComponent,
-    ContactComponent
+    ContactComponent,
+    QuoterComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

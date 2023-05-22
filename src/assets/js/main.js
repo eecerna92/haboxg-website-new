@@ -57,7 +57,6 @@
 	});
 
 	// Nice Select JS
-	$("select").niceSelect();
 
 	// Popup Video
 	$(".popup-youtube").magnificPopup({

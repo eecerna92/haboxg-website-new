@@ -23,6 +23,7 @@ import { ProjectsDetailsComponent } from './components/pages/projects-details/pr
 import { ServicesComponent } from './components/pages/services/services.component';
 import { ServicesDetailsComponent } from './components/pages/services-details/services-details.component';
 import { AboutComponent } from './components/pages/about/about.component';
+import { QuoterComponent } from './components/pages/quoter/quoter.component';
 
 const routes: Routes = [
     {path: '', component: SeoAgencyHomeComponent},
@@ -48,6 +49,7 @@ const routes: Routes = [
     {path: 'blog', component: BlogComponent},
     {path: 'blog-details', component: BlogDetailsComponent},
     {path: 'contact', component: ContactComponent},
+    {path: 'quoter', component: QuoterComponent},
     {path: '**', component: ErrorComponent}
 ];
 
