@@ -36,6 +36,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './components/interceptors/auth-interceptor';
 import { QuoterComponent } from './components/pages/quoter/quoter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

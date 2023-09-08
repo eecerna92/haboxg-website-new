@@ -21,9 +21,9 @@
             <div class="col-lg-4 col-md-12">
                 <div class="circulate-image">
                     <span>Selecciona la forma en que importarás</span>
-                    <select class="form-select" aria-label="¿Cómo importaras?">
-                        <option selected value="1">USA - GT</option>
-                        <option value="2">MEX - GT</option>
+                    <select class="form-select" aria-label="¿Cómo importaras?" [(ngModel)]="importaciones" (ngModelChange)="onImportacionesChange()">
+                        <option value="USA">USA - GT</option>
+                        <option value="MEX">MEX - GT</option>
                     </select>
                     <img src="assets/images/servicios/servicio_pobox.png" alt="image">
                 </div>
@@ -49,13 +49,13 @@
                                             formControlName="_Peso">
                                     </div>
                                     <div class="form-group">
-                                        <p>Valor de la compra</p>
+                                        <p>Valor de la compra en {{moneda}}</p>
                                         <input type="number" class="form-control" placeholder="Valor de Compra"
                                             formControlName="_Compra" (change)="compraChange()">
                                     </div>
 
                                     <div class="form-group">
-                                        <p>Shipping</p>
+                                        <p>Shipping en {{moneda}}</p>
                                         <input type="number" class="form-control" placeholder="Shipping"
                                             formControlName="_Shipping" (change)="shippingChange()">
                                     </div>

@@ -10,7 +10,7 @@ export class QuoterComponent implements OnInit {
 
   allItems: any[]
   _tipoCambio: number = 8
-  __desaduanaje: number = 25
+  __desaduanaje: number = 28
   __tarifaPeso: number = 28
 
   _arancel: number = 0
@@ -20,6 +20,10 @@ export class QuoterComponent implements OnInit {
   __seguro: number = 0
   __totalCompra: number = 0
   __total: number = 0
+
+  isUSA: boolean = true
+  importaciones: string='USA'
+  moneda: string = 'USD'
 
   FormQuoterGroup: FormGroup;
 
@@ -129,11 +133,7 @@ export class QuoterComponent implements OnInit {
 
   calcular() {
     //1.- Convertir arancel a decimal   
-    let vArrancel = 0
-    if (this._arancel != 0)
-      vArrancel = this._arancel / 100.00;
-    else
-      vArrancel = 1
+    let vArrancel = this._arancel / 100.00;
 
     //2.- Flete
     this.__flete = this.Peso.value * this.__tarifaPeso
@@ -164,5 +164,18 @@ export class QuoterComponent implements OnInit {
 
   onMercaderiaChange() {
     this._arancel = this.Mercancia.value
+  }
+  onImportacionesChange(){
+    if (this.importaciones === "USA") {
+      this._tipoCambio = 8
+      this.__tarifaPeso = 28
+      this.moneda='USD'
+    }
+    else {
+      this._tipoCambio = 0.30
+      this.__tarifaPeso = 45
+      this.moneda='MEX'
+    }
+    this.calcular()
   }
 }
